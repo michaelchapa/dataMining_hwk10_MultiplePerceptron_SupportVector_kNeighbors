@@ -1,0 +1,20 @@
+A)
+For e2 of C',
+object p is selected and the e2-neighborhood of p is checked if it contains at least MinPts objects. 
+Since e1 of C has a smaller radius than e2 and is presumabely using the same object p, the objects in its smaller radius will be a subset of the e2 larger radius.
+
+B)
+CLIQUE -> finds dense cells in all sub-spaces.
+
+Identify subspaces that contain clusters:
+	Partition the data space into the grid-structure and find the number of points that lie inside each cell of the partition
+	Identify the subspaces that contain clusters using the Apriori principle
+Identify clusters:
+	Determine dense units in all subspaces of interest.
+	Determine connected dense units in all subspaces of interest. 
+Generate minimal descriptions for the clusters:
+	Determine maximal regions that cover a cluster of connected dense units for each cluster. 
+	Determine minimal cover for each cluster. 
+
+C)
+See code
