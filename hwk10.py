@@ -2,9 +2,8 @@ import numpy as np
 import pandas as pd
 from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
-from sklearn.datasets import make_classification
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler
     
 ########################## trainTestSplit_data ###############################
 # Purpose:
@@ -113,13 +112,37 @@ def create_supportVector_classify(X_train, X_test, y_train, y_test):
 # Notes:
 #   None
 def create_kNeighbors_classify(X_train, X_test, y_train, y_test):
-    print("Hola!")
+    neigh2 = KNeighborsClassifier(n_neighbors = 2)
+    neigh2.fit(X_train, y_train)
+    neigh2.predict(X_test)
+    kNeigh_2_acc = neigh2.score(X_test, y_test)
+    
+    neigh3 = KNeighborsClassifier(n_neighbors = 3)
+    neigh3.fit(X_train, y_train)
+    neigh3.predict(X_test)
+    kNeigh_3_acc = neigh3.score(X_test, y_test)
+    
+    neigh4 = KNeighborsClassifier(n_neighbors = 4)
+    neigh4.fit(X_train, y_train)
+    neigh4.predict(X_test)
+    kNeigh_4_acc = neigh4.score(X_test, y_test)
+    
+    print("K-nearest neighbors Classifier, " + 
+          "n_neighbors: 2\n" +
+          "Accuracy: %.2lf\n" % (kNeigh_2_acc))
+    print("K-nearest neighbors Classifier, " + 
+          "n_neighbors: 3\n" +
+          "Accuracy: %.2lf\n" % (kNeigh_3_acc))
+    print("K-nearest neighbors Classifier, " + 
+          "n_neighbors: 4\n" +
+          "Accuracy: %.2lf\n" % (kNeigh_4_acc))
     
 
 def main():
     X_train, X_test, y_train, y_test = trainTestSplit_data("hwk10.csv")
-    # create_NeuralNetwork_classify(X_train, X_test, y_train, y_test)
+    create_NeuralNetwork_classify(X_train, X_test, y_train, y_test)
     create_supportVector_classify(X_train, X_test, y_train, y_test)
+    create_kNeighbors_classify(X_train, X_test, y_train, y_test)
     
 if __name__ == "__main__":
     main()

@@ -17,4 +17,35 @@ Generate minimal descriptions for the clusters:
 	Determine minimal cover for each cluster. 
 
 C)
-See code
+See code in hwk10.py for implementation.
+
+OUTPUT:
+Split Training: X: (480, 7) y: (480,)
+Split Testing: X: (20, 7) y: (20,) 
+
+
+Multi-layer Perceptron Classifier, hidden layer size: 100, activation fxn: RELU
+Accuracy: 0.90, Loss: 0.02
+
+Multi-layer Perceptron Classifier, hidden layer size: 200, activation fxn: Logistic
+Accuracy: 0.95, Loss: 0.25
+
+
+C-Support Vector Classifier, C: .1, kernel: rbf
+Accuracy: 0.85
+
+C-Support Vector Classifier, C: .001, kernel: poly
+Accuracy: 0.55
+
+C-Support Vector Classifier, C: 1, kernel: sigmoid
+Accuracy: 0.90
+
+
+K-nearest neighbors Classifier, n_neighbors: 2
+Accuracy: 0.75
+
+K-nearest neighbors Classifier, n_neighbors: 3
+Accuracy: 0.65
+
+K-nearest neighbors Classifier, n_neighbors: 4
+Accuracy: 0.85
